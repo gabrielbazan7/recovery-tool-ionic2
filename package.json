@@ -35,7 +35,8 @@
       "platform": "ios",
       "version": "",
       "locator": "ios"
-    }
+    },
+    "android"
   ],
   "name": "redditapp",
   "description": "redditApp: An Ionic project"
