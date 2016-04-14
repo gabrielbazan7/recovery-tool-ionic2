@@ -1,0 +1,39 @@
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Hello Ionic</ion-title>
+</ion-navbar>
+
+<ion-content padding class="getting-started">
+  <reddit>
+    <ion-list>
+      <h3>Add a Link {{name}}</h3>
+      <ion-item>
+        <ion-label floating>Title</ion-label>
+        <ion-input type="text" #newtitle></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Link</ion-label>
+        <ion-input type="text" #newlink></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <button (click)="addArticle(newtitle,newlink)">Submit link</button>
+    <button primary menuToggle>Toggle Menu</button>
+  </reddit>
+  <reddit-article>
+    <ion-row>
+      <ion-col width-20>{{ votes }} Points</ion-col>
+      <ion-col width-25>{{ title }}</ion-col>
+      <ion-col width-50>
+        <ion-list>
+          <ion-item><a href (click)="voteUp()"><i class="arrow up icon"></i> upvote</a></ion-item>
+          <ion-item><a href (click)="voteDown()"><i class="arrow down icon"></i> downvote</a></ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </reddit-article>
+</ion-content>
