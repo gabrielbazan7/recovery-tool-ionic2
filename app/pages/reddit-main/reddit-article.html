@@ -1,0 +1,11 @@
+<ion-row>
+  <ion-col width-25 type="value">{{article.votes}} Points</ion-col>
+  <ion-col width-25 type="text"><a href="{{article.link}}">{{article.title}}</a></ion-col>
+  <ion-col width-25>({{ article.domain() }})</ion-col>
+  <ion-col width-50>
+    <ion-list>
+      <button (click)="voteUp()"><ion-icon name="arrow-down"></ion-icon> upvote</button>
+      <button (click)="voteDown()"><ion-icon name="arrow-up"></ion-icon> downvote</button>
+    </ion-list>
+  </ion-col>
+</ion-row>
