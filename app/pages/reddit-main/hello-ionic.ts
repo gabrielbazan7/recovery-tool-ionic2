@@ -1,4 +1,5 @@
 import {Page} from 'ionic-angular';
+import {IONIC_DIRECTIVES} from 'ionic-angular';
 import {Component} from 'angular2/core';
 
 export class Article {
@@ -27,7 +28,8 @@ export class Article {
 @Component({
   selector:'reddit-article',
   inputs: ['article'],
-  templateUrl: 'build/pages/reddit-main/reddit-article.html'
+  templateUrl: 'build/pages/reddit-main/reddit-article.html',
+  directives: [IONIC_DIRECTIVES]
 })
 export class ArticleComponent {
   article: Article;
