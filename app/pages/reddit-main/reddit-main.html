@@ -2,26 +2,28 @@
   <button menuToggle>
     <ion-icon name="menu"></ion-icon>
   </button>
-  <ion-title>Reddit App</ion-title>
+  <ion-title> Add a Link</ion-title>
 </ion-navbar>
 
-<ion-content padding class="getting-started">
-  <ion-list>
-    <h3>Add a Link</h3>
+<ion-content class="getting-started">
+  <ion-card>
+     <ion-card-content>
+  <ion-list inset>
     <ion-item>
-      <ion-label floating>Title</ion-label>
+      <ion-label stacked>Title</ion-label>
       <ion-input type="text" #newtitle></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Link</ion-label>
+      <ion-label stacked>Link</ion-label>
       <ion-input type="text" #newlink></ion-input>
     </ion-item>
   </ion-list>
-
-  <button (click)="addArticle(newtitle,newlink)">Submit article</button>
+  <button class="button button-full button-royal" (click)="addArticle(newtitle,newlink)">Submit article</button>
   <reddit-article *ngFor="#article of sortedArticles()" [article]="article"></reddit-article>
   <!-- article ( un elemento de articles que viene del padre )
   se pasa como input article (es el nombre del input) al atributo article de la clase article component
   ( se lo pasa por reddit-article) -->
+  </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -1,11 +1,11 @@
+<hr>
 <ion-row>
-  <ion-col width-15 type="value">{{article.votes}} Points</ion-col>
-  <ion-col width-15 type="text"><a href="{{article.link}}">{{article.title}}</a></ion-col>
-  <ion-col width-20>({{ article.domain() }})</ion-col>
-  <ion-col width-50>
+  <ion-col width-30 type="value">{{article.votes}} Points <a href="{{article.link}}">{{article.title}}</a></ion-col>
+  <ion-col width-40>({{ article.domain() }})</ion-col>
+  <ion-col width-30>
     <ion-list>
-      <button (click)="voteUp()"><ion-icon name="arrow-up"></ion-icon> upvote</button>
-      <button (click)="voteDown()"><ion-icon name="arrow-down"></ion-icon> downvote</button>
+      <button class="pull-right" (click)="voteUp()" small><ion-icon name="arrow-up"></ion-icon> upvote</button>
+      <button class="pull-right" (click)="voteDown()" small><ion-icon name="arrow-down"></ion-icon> downvote</button>
     </ion-list>
   </ion-col>
 </ion-row>
