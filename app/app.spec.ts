@@ -38,5 +38,9 @@ export function main(): void {
       expect(redditApp['app']).not.toBe(null);
     });
 
+    it('initialises with one page', () => {
+      expect(redditApp['pages'].length).toEqual(1);
+    });
+
   });
 }

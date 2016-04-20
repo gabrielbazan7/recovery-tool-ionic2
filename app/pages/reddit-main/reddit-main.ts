@@ -1,6 +1,6 @@
 import {Page} from 'ionic-angular';
-import {IONIC_DIRECTIVES} from 'ionic-angular';
-import {Component} from 'angular2/core';
+import {ArticleComponent} from '../reddit-article/reddit-article';
+import * as ArticleService from '../../service/service';
 
 export class Article {
   title: string;
@@ -28,26 +28,6 @@ export class Article {
   }
 }
 
-@Component({
-  selector:'reddit-article',
-  inputs: ['article'],
-  templateUrl: 'build/pages/reddit-main/reddit-article.html',
-  directives: [IONIC_DIRECTIVES]
-})
-export class ArticleComponent {
-  article: Article;
-
-  voteUp(): boolean {
-    this.article.voteUp();
-    return false;
-  }
-  voteDown(): boolean {
-    this.article.voteDown();
-    return false;
-  }
-
-}
-
 @Page({
   selector:'reddit',
   templateUrl: 'build/pages/reddit-main/reddit-main.html',
@@ -65,7 +45,8 @@ export class RedditApp {
     title.value = '';
     link.value = '';
   }
+
   sortedArticles(): Article[] {
-    return this.articles.sort((a: Article, b: Article) => b.votes - a.votes);
+    return ArticleService.sort(this.articles);
   }
 }

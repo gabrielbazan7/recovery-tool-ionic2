@@ -6,8 +6,6 @@
 </ion-navbar>
 
 <ion-content class="getting-started">
-  <ion-card>
-     <ion-card-content>
   <ion-list inset>
     <ion-item>
       <ion-label stacked>Title</ion-label>
@@ -19,11 +17,9 @@
       <ion-input type="text" #newlink></ion-input>
     </ion-item>
   </ion-list>
-  <button class="button button-full button-royal" (click)="addArticle(newtitle,newlink)">Submit article</button>
+  <button class="button button-royal" (click)="addArticle(newtitle,newlink)">Submit article</button>
   <reddit-article *ngFor="#article of sortedArticles()" [article]="article"></reddit-article>
   <!-- article ( un elemento de articles que viene del padre )
   se pasa como input article (es el nombre del input) al atributo article de la clase article component
   ( se lo pasa por reddit-article) -->
-  </ion-card-content>
-  </ion-card>
 </ion-content>
