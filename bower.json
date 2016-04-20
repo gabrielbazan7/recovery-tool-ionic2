@@ -1,0 +1,21 @@
+{
+  "name": "reddit",
+  "description": "Reddit: An Ionic project",
+  "main": "",
+  "authors": [
+    "Bazan Gabriel Edgardo <gabriebazan7@hotmail.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}
