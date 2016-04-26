@@ -1,0 +1,16 @@
+<ion-navbar *navbar>
+  <ion-title>Recovery Tool</ion-title>
+</ion-navbar>
+<ion-content class="transferFunds">
+  <ion-card>
+    <ion-card-header>
+    TRANSFER FUNDS ( total balance {{balance}}):
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input type="text" placeholder="Destination address" #address></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <button class="button button-full button-royal" (click)="sendFunds(address)">Transfer Funds</button>
+</ion-content>

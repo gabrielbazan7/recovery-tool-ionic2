@@ -1,16 +1,16 @@
-// import 'es6-shim';
+import 'es6-shim';
 import {App, IonicApp, Platform, MenuController} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
-import {RedditApp} from './pages/reddit-main/reddit-main';
+import {Inputs} from './pages/recovery-tool/recovery-tool';
 
 
 @App({
   templateUrl: 'build/app.html',
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
-export class MyApp {
-  // make RedditApp the root (or first) page
-  rootPage: any = RedditApp;
+class MyApp {
+  // make Inputs the root (or first) page
+  rootPage: any = Inputs;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -21,7 +21,9 @@ export class MyApp {
     this.initializeApp();
 
     // set our app's pages
-    this.pages = [{ title: 'Post in reddit', component: RedditApp }];
+    this.pages = [
+      { title: 'Hello Ionic', component: Inputs }
+    ];
   }
 
   initializeApp() {

@@ -1,0 +1,63 @@
+<ion-navbar *navbar>
+  <ion-title>Recovery Tool</ion-title>
+</ion-navbar>
+
+<ion-content class="recovery-tool">
+  <ion-card>
+    <ion-card-header>
+    WALLET CONFIGURATION:
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list  no-lines>
+       <ion-item>
+          <ion-label>Required Signatures</ion-label>
+          <ion-select [(ngModel)]="m" >
+            <ion-option *ngFor="#option of availableOptions" [value] = "option">{{option}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Total Copayers</ion-label>
+          <ion-select [(ngModel)]="n" (change)="onChange()">
+            <ion-option *ngFor="#option of availableOptions" [value] = "option">{{option}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Network</ion-label>
+          <ion-select [(ngModel)]="net" >
+          <ion-option *ngFor="#networks of availableNetworks" [value] = "networks">{{networks}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>GAP (Usually does not need to be changed)</ion-label>
+          <ion-input type="number" [(ngModel)]="gap"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngFor="#copayer of copayers; #i=index">
+    <ion-card>
+      <ion-card-header>
+      Backup for Copayer {{copayer}}
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list no-lines>
+          <ion-item>
+            <ion-input type="text" value="" [(ngModel)]="inputs.backup[i]" placeholder="Mnemonic or export wallet data"></ion-input>
+          </ion-item>
+          <ion-item>
+            <label>Or upload a file: </label>
+            <input type="file" (change)="changeListener($event,i)" accept="application/json, .txt">
+          </ion-item>
+          <ion-item>
+            <ion-input type="password" [(ngModel)]="inputs.password[i]" placeholder="Password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="password" [(ngModel)]="inputs.passwordX[i]" placeholder="Encrypted private key password (in case you have one)"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <button class="button button-full button-royal" (click)="proccessInputs()">Scan</button>
+</ion-content>

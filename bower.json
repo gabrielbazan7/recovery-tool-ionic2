@@ -1,6 +1,6 @@
 {
-  "name": "reddit",
-  "description": "Reddit: An Ionic project",
+  "name": "recovery-tool",
+  "description": "Recovery-tool: An Ionic project",
   "main": "",
   "authors": [
     "Bazan Gabriel Edgardo <gabriebazan7@hotmail.com>"
@@ -17,5 +17,9 @@
     "tests"
   ],
   "dependencies": {
+    "bitcore": "0.13.1",
+    "bitcore-mnemonic": "1.0.1",
+    "bitcore-lib": "0.13.15",
+    "sjcl": "1.0.3"
   }
 }
